@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Blog do Node</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/categorias">Categorias</a>
+      </li> 
+      {{#if user}}
+        {{#if  user.ehAdmin}}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/postagens">Administrar Postagens</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/categorias">Administrar Categorias</a>
+      </li>
+        {{/if}}
+      {{/if}}
+    </ul>
+  </div>
+{{#if user}}
+<ul class="navbar-nav navbar-right">
+    <li class="nav-item">
+        <a class="nav-link" href="/usuarios/logout">Logout</a>
+      </li>
+  </ul>
+{{else}}
+<ul class="navbar-nav navbar-right">
+    <li class="nav-item">
+        <a class="nav-link" href="/usuarios/registro">Registro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/usuarios/login">Login</a>
+      </li>
+  </ul>
+{{/if}}
+</nav>
